@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func convertTemp(sender: AnyObject) {
+        if (tempText.text == "") {
+            return
+        }
         let fahrenheit = Double(tempText.text!)
+        // how to check number of characters 
         let celsius = (fahrenheit! - 32)/1.8
         let resultText = "Celsius \(celsius)"
         resultLabel.text = resultText
